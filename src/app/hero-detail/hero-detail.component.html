@@ -1,0 +1,19 @@
+<!-- The pasted HTML refers to a selectedHero. The new HeroDetailComponent can present any hero, not just a selected hero. Replace selectedHero with hero everywhere in the template. -->
+
+<!--
+Currently, you have a list in the component template. To show details about a hero when you click their name in the list, add a section in the template that displays their details. -->
+
+<div *ngIf="hero">
+  <h2>{{hero.name | uppercase}} Details</h2>
+  <div>id: {{hero.id}}</div>
+  <div>
+    <label for="hero-name">Hero name: </label>
+    <input id="hero-name" [(ngModel)]="hero.name" placeholder="name">
+  </div>
+</div>
+
+<button type="button" (click)="goBack()">go back</button>
+<!-- If you want changes to persist, you must write them back to the server.
+
+At the end of the hero detail template, add a save button with a click event binding that invokes a new component method named save() -->
+<button type="button" (click)="save()">save</button>
